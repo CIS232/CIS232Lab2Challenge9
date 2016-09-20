@@ -1,12 +1,12 @@
 package lab2;
 
 public class BankAccount {
-	protected double balance, intrestRate,serviceCharges;
-	protected int withdraws,deposits;
+	protected double balance, annualInterestRate, serviceCharges;
+	protected int withdrawals,deposits;
 	
 	public BankAccount(double balance, double intrestRate){
 		this.balance = balance;
-		this.intrestRate = intrestRate;
+		this.annualInterestRate = intrestRate;
 	}
 	
 	public void deposit(double amount){
@@ -16,14 +16,28 @@ public class BankAccount {
 	
 	public void withdraw(double withdraw){
 		this.balance = balance - withdraw;
-		withdraws++;
+		withdrawals++;
 	}
 	
 	public double getBalance(){
 		return balance;
 	}
 	
+	protected void calcInterest(){
+		double mir = annualInterestRate/12;
+		double monthlyInterest = balance*mir;
+		this.balance = balance + monthlyInterest;
+	}
+	public double getIntrest(){
+		return balance;
+	}
 	
-
+	public void montlyProcess(){
+		this.balance = balance - serviceCharges;
+		calcInterest();
+		withdrawals = 0;
+		deposits = 0;
+		serviceCharges = 0;
+	}
 }
 
