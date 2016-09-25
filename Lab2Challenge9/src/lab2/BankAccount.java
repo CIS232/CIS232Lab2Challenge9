@@ -32,7 +32,7 @@ public class BankAccount {
 		return balance;
 	}
 	
-	public void montlyProcess(){
+	public void monthlyProcess(){
 		this.balance = balance - serviceCharges;
 		calcInterest();
 		withdrawals = 0;
