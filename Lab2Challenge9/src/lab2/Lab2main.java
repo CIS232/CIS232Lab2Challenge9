@@ -8,7 +8,7 @@ public class Lab2main {
 		double balance;
 		double intRate;
 		String choice;
-		int Number;
+		
 
 		SavingsAccount account = new SavingsAccount(0, 0, "Name", 0);
 
@@ -18,19 +18,25 @@ public class Lab2main {
 		balance = keyboard.nextDouble();
 		account.setBalance(balance);
 		System.out.println("Your account balance is " +account.getBalance());
-		
-		
-		System.out.println("How much would you like to withdraw? ");
+		do{	
+		System.out.println("How much would you like to withdraw? Press 0 to skip");
 		double withdrawAmount = keyboard.nextDouble();
 		account.withdraw(withdrawAmount);
+		account.getServiceCharges();
 		System.out.println("Your account balance is " +account.getBalance());
-	
+		System.out.println("Would you like to make more withdraws Y/N ?");
+		choice = keyboard.next();
+		}while(choice.equals("y"));
 		
 		
-		System.out.println("How much would you like to deposit? ");
+		
+		System.out.println("How much would you like to deposit? Press 0 to skip ");
 		double depositAmount = keyboard.nextDouble();
 		account.deposit(depositAmount);
 		System.out.println("Your account balance is " +account.getBalance());
+		
+		
+		System.out.println("your fee for withdraws is " +account.getServiceCharges());
 		
 
 	}
