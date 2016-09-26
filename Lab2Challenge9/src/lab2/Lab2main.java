@@ -22,7 +22,6 @@ public class Lab2main {
 		System.out.println("How much would you like to withdraw? Press 0 to skip");
 		double withdrawAmount = keyboard.nextDouble();
 		account.withdraw(withdrawAmount);
-		account.getServiceCharges();
 		System.out.println("Your account balance is " +account.getBalance());
 		System.out.println("Would you like to make more withdraws Y/N ?");
 		choice = keyboard.next();
