@@ -1,6 +1,6 @@
 package lab2;
 
-public class BankAccount {
+public abstract class BankAccount {
 	protected double balance, annualInterestRate, serviceCharges;
 	protected int withdrawals,deposits;
 	
