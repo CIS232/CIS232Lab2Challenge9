@@ -14,9 +14,10 @@ public class BankAccount {
 		deposits++; // increases number of deposits by one each time.
 	}
 	
-	public void withdraw(double withdraw){
+	public double withdraw(double withdraw){
 		this.balance = balance - withdraw;
 		withdrawals++;
+		return balance;
 	}
 	
 	public double getBalance(){
@@ -39,4 +40,42 @@ public class BankAccount {
 		deposits = 0;
 		serviceCharges = 0;
 	}
+
+	public double getAnnualInterestRate() {
+		return annualInterestRate;
+	}
+
+	public void setAnnualInterestRate(double annualInterestRate) {
+		this.annualInterestRate = annualInterestRate;
+	}
+
+	public double getServiceCharges() {
+		return serviceCharges;
+	}
+
+	public void setServiceCharges(double serviceCharges) {
+		this.serviceCharges = serviceCharges;
+	}
+
+	public int getWithdrawals() {
+		return withdrawals;
+	}
+
+	public void setWithdrawals(int withdrawals) {
+		this.withdrawals = withdrawals;
+	}
+
+	public int getDeposits() {
+		return deposits;
+	}
+
+	public void setDeposits(int deposits) {
+		this.deposits = deposits;
+	}
+
+	public void setBalance(double balance) {
+		this.balance = balance;
+	}
+	
+	
 }
