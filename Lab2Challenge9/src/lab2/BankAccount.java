@@ -1,11 +1,13 @@
 package lab2;
-
+public static void main(String[] args) 
 public class BankAccount {
 	protected double balance, annualInterestRate, serviceCharges;
 	protected int withdrawals,deposits;
 	
+	
+	
 	public BankAccount(double balance, double interestRate){
-		this.balance = balance;
+		this.balance =balance;
 		this.annualInterestRate = interestRate;
 	}
 	
