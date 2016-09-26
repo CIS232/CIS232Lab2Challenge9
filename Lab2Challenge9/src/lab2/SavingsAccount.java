@@ -1,7 +1,7 @@
 package lab2;
 
 public class SavingsAccount extends BankAccount {
-	private boolean stat;
+	private boolean status;
 
 	public SavingsAccount(String name, int num) {
 		super(name, num);
@@ -9,19 +9,19 @@ public class SavingsAccount extends BankAccount {
 
 	public void checkAccountStatus() {
 		if (getBalance() <= 25)
-			stat = false;
+			status = false;
 		else
-			stat = true;
+			status = true;
 	}
 
 	public void Withdraw(double w) {
-		if (stat)
+		if (status)
 			super.withdrawal(w);
-		else
-			System.out
-					.println("Balance is less than $25, cannot withdraw.");
+		else{
+			System.out.println("Balance is less than $25, cannot withdraw.");
+		}
 	}
-
+	
 	public void Deposit(double d) {
 		super.deposit(d);
 		if (getBalance() > 25)
@@ -29,8 +29,7 @@ public class SavingsAccount extends BankAccount {
 		else {
 
 			status = false;
-			System.out
-					.println("Enter more to make account active.");
+			System.out.println("Enter more to make account active.");
 		}
 	}
 
@@ -43,8 +42,7 @@ public class SavingsAccount extends BankAccount {
 			status = true;
 		else {
 			status = false;
-			System.out
-					.println("Enter more to make account active.");
+			System.out.println("Enter more to make account active.");
 		}
 	}
 }

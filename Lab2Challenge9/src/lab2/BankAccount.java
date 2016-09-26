@@ -4,9 +4,9 @@ public class BankAccount {
 	protected double balance, annualInterestRate, serviceCharges;
 	protected int withdrawals,deposits;
 	
-	public BankAccount(double balance, double intrestRate){
+	public BankAccount(double balance, double interestRate){
 		this.balance = balance;
-		this.annualInterestRate = intrestRate;
+		this.annualInterestRate = interestRate;
 	}
 	
 	public void deposit(double amount){
@@ -28,7 +28,7 @@ public class BankAccount {
 		double monthlyInterest = balance*mir;
 		this.balance = balance + monthlyInterest;
 	}
-	public double getIntrest(){
+	public double getInterest(){
 		return balance;
 	}
 	
@@ -40,4 +40,3 @@ public class BankAccount {
 		serviceCharges = 0;
 	}
 }
-
